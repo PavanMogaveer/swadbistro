@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="SWA.jpg" type="image/x-icon">
+  <title>Food Fest Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: url(bg.jpg);
+      background-size: cover;
+
+    }
+
+    header {
+      background: #177d32;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .container {
+      padding: 10px;
+    }
+
+    .event-details, .menu-section {
+      margin-bottom: 30px;
+      background: #f7f7f7;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      justify-content: center;
+      display: flex;
+     
+    }
+    .menu{
+      margin-bottom: 20px;
+      /* background: #f7f7f7;
+       */
+       background: url(bg2.jpg);
+       background-size: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90vw;
+      justify-self: center;
+      padding: 10px;
+       color: #FFC107;
+       text-align: center;
+       
+
+    }
+
+    .menu p span{
+      font-weight: bold;
+      color:#00ff37;
+      
+    }
+    .event-details h2, .menu-section h2 {
+      color: #FFC107;
+    }
+
+    .menu-upload {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #FFC107;
+      padding: 20px;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .menu h2{
+      color: orangered;
+    }
+
+    .menu-upload input[type="file"] {
+      display: none;
+    }
+
+    .menu-upload label {
+      color: #ff7b54;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .menu-preview {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .menu-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      background:#177d32;
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+    }
+
+
+
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex; /* Visible by default on page load */
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    /* Style for the popup content */
+    .popup-content {
+      position: relative;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Style for the image */
+    .popup-content img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 5px;
+    }
+
+    /* Style for the close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4444;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background: #ff0000;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SWAAD BISTRO</h1>
+    <p>RESTRO FOOD</p>
+  </header>
+
+  <div class="container">
+    <!-- Event Details Section -->
+
+    <div class="event-details">
+        <img src="SWA.jpg" alt="" srcset="" width="95%">
+</div>
+
+<div class="event-details">
+  <img src="SWAD.jpg" alt="" srcset="" width="95%">
+</div>
+
+<div class="event-details">
+  <img src="p1.jpg" alt="" srcset="" width="95%">
+</div>
+
+<div class="menu">
+  <h2>SWAAD BISTRO </h2>
+  <p><span>Rice Dish</span>
+  - Curd Rice</p>
+  
+  <p><span>Salad</span>
+  - Cucumber with Corn</p>
+  
+  <p><span>Fried</span>
+ - Brinjal Fry and Maddur Vada</p>
+  
+  <p><span>Juice</span>
+ - Anjira and Sesame Juice</p>
+  
+ <p> <span>Sweets</span>
+ - Chia Seed Kheer</p>
+  
+  
+</div>
+
+<div class="event-details">
+  <img src="p2.jpg" alt="" srcset="" width="95%">
+</div>
+
+<div class="event-details">
+  <img src="p3.jpg" alt="" srcset="" width="95%">
+</div>
+
+
+
+    
+  </div>
+  <div class="popup-overlay" id="imagePopup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="hidePopup()">Cancel</button>
+      <img src="SWA.jpg" alt="Popup Image">
+    </div>
+  </div><script>
+    // Function to hide the popup
+    function hidePopup() {
+      document.getElementById("imagePopup").style.display = "none";
+    }
+
+    // Automatically show the popup when the page is loaded
+    window.onload = function() {
+      document.getElementById("imagePopup").style.display = "flex";
+    };
+  </script>
+  
+
+  <footer>
+    &copy;SWAAD BISTRO - III BCOM 'A'
+  </footer>
+
+</body>
+</html>
